@@ -27,7 +27,7 @@ class CrawlUser
       users = []
       insert_query = "INSERT INTO UserTag (user_name,tag_id) VALUES(?,?)"
       # file = File.new("user_category/"+category+"_users.txt","w")
-      for i in 1..10
+      for i in 1..5
         options = {count: 20, page: i}
         begin
         users += client.user_search(@tags[index],options)
@@ -58,6 +58,6 @@ class CrawlUser
   end
 end
 
-db_name = "TwitterData0520.sqlite"
+db_name = "TwitterData0521.sqlite"
 crawler = CrawlUser.new(db_name)
 crawler.get_user()

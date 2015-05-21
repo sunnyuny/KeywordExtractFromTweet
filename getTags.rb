@@ -23,10 +23,11 @@ class TagGenerator
 def generate_tags(filename)
   n = [20,190,1140,4845]
   
+  
   #generate tags for 2000 twitter users
   file = File.new(filename,"w")
   rorg = RealRand::RandomOrg.new
-  a = rorg.randnum(2000, 1, 4)
+  a = rorg.randnum(400, 1, 4)
   b = Hash.new(0)
   a.each do |v|
     b[v] += 1
@@ -34,9 +35,9 @@ def generate_tags(filename)
   
   #for each tag num, randomly generate tag set
   b.each do |k, v|
-    a = rorg.randnum(v,1,n[k-1])
-    a = a.uniq
-    a.each do |num|
+    c = rorg.randnum(v,1,n[k-1])
+    c = c.uniq
+    c.each do |num|
       tag = tagsMap(num,k)
       file.write(tag)
     end
