@@ -9,10 +9,10 @@ class CrawlUser
   
   def initialize(db_name)
     @client = Twitter::REST::Client.new do |config|
-      config.consumer_key = 'itwFkyqvaubYZOo7wyf4TtRq0'
-      config.consumer_secret = '4z2DKuIywK0H7F4CBdKhgB0cVXGkLWC28FQfPdVltwqJYGVCZ3'
-      config.access_token = '594247802-J3UgFLRQ6wxqKZHis3ErbC1etEsX7kVozOaxCTeY'
-      config.access_token_secret = 'lAXIbMLz9hEGgJj280SpE7952dR0yQsE6xSeJ0y9GvyEh'
+      config.consumer_key = ''
+      config.consumer_secret = ''
+      config.access_token = ''
+      config.access_token_secret = ''
     end
     File.delete(db_name) if File.exists?db_name
     @tags = []
